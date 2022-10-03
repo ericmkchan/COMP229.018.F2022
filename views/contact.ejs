@@ -1,17 +1,39 @@
 
 
 <% include partials/header %>
+<% include partials/content %>
+
+<div class="container mt-3">
 
 <h1>Contact</h1>
 
-<P>
-    I can be reached at the following ways:
-    <li>Phone: +1 (416) 833-5354 </li>
-    <li>Email: <a href="mailto:webmaster@example.com">emkchan@yahoo.com</a></li>
-    <li>WhatsApp: +1 (416) 833-5354</li>
-    <li>Facebook: <a href="https://www.facebook.com/eric.chan.16100/">https://www.facebook.com/eric.chan.16100</a></li>
-</P>
+<br>
 
-<% include partials/content %>
+<h5>Please leave me your message here:</h5>
+
+<br>
+
+<form method="POST" action="">
+
+    <label for="fname">First Name:</label><br>
+    <input type="text" id="fname" name="fname" value=""><br><br>
+
+    <label for="lname">Last Name:</label><br>
+    <input type="text" id="lname" name="lname" value=""><br><br>
+    
+    <label for="contact">Contact Number:</label><br>
+    <input type="text" id="contact" name="contact" value=""><br><br>
+
+    <label for="email">Email:</label><br>
+    <input type="email" id="email" name="email"><br><br>
+
+    <label for="message">Message:</label><br>
+    <textarea rows="10" cols="60" name="message">Your Message</textarea><br><br>
+
+</form>
+
+<button onclick="window.location.href='/';">Submit</button>
+
+</div>
 
 <% include partials/footer %>
