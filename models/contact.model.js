@@ -11,6 +11,10 @@ const contactModel = mongoose.Schema(
         areaCode: Number,
         phoneNumber: Number,
         email: String
+    },
+    {
+        collection: "bizcontactlist"
     }
 );
-mongoose.model('Contact', contactModel);
+
+module.exports = mongoose.model('bizcontactlist', contactModel);

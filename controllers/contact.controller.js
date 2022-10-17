@@ -4,14 +4,17 @@
 
 const Contact = require('../models/contact.model');
 
-exports.contactList= function(req, res, next) {
+exports.bizcontactList = function(req, res, next) {
+
+    Contact.find((err, bizcontactList) => {
+
     if (err) {
         return console.error(err);
     } else {
-        res.render('contact/list', {
+        res.render('bizcontactlist/list', {
             title: 'Business Contact',
-            ContactList: contactList
-        }
-        )
-    };
+            ContactList: bizcontactList
+        })
+    }
+    });
 }

@@ -1,0 +1,24 @@
+<table class="table table-bordered table-striped table-hover">
+    <!-- Header Row-->
+    <tr>
+        <th class="text-center">First Name</th>
+        <th class="text-center">Last Name</th>
+        <th class="text-center">Area Code</th>
+        <th class="text-center">Phone Number</th>
+        <th class="text-center">Email</th>
+        <th class="text-center" colspan="2">Actions</th>
+    </tr>
+
+    <!-- Repeatable Template Row -->
+
+    <% for(let count = 0; count < ContactList.length; count++) { %>
+        <tr>
+            <td class="text-center"><%= ContactList[count].firstName %></td>
+            <td class="text-center"><%= ContactList[count].lastName %></td>
+            <td class="text-center"><%= ContactList[count].areaCode %></td>
+            <td class="text-center"><%= ContactList[count].phoneNumber %></td>
+            <td class="text-center"><%= ContactList[count].email %></td>
+
+        </tr>
+    <% } %>
+</table>
