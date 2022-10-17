@@ -8,12 +8,18 @@ const app = require('../app');
 const debug = require('debug')('comp229.018.f2022:server');
 const http = require('http');
 
+// Database Connection
+const dbconfig = require('../config/db');
+
 /**
  * Get port from environment and store in Express.
  */
 
 const port = normalizePort(process.env.PORT || '3000');
 app.set('port', port);
+
+// Database Connection
+const db = dbconfig();
 
 /**
  * Create HTTP server.

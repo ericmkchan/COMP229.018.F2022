@@ -2,9 +2,9 @@
 // File: app.js
 // Name: Man Kit Chan
 // Student ID: 301251832
-// Date: 2022-09-30
+// Date: 2022-10-16
 // Course: COMP229-018
-// Title: Assignment 1
+// Title: Assignment 2
 
 const createError = require('http-errors');
 const express = require('express');
@@ -14,6 +14,9 @@ const logger = require('morgan');
 
 const indexRouter = require('./routes/index');
 const usersRouter = require('./routes/users');
+
+//
+const contactRouter = require('./routes/contact.router');
 
 const app = express();
 
