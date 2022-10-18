@@ -1,0 +1,95 @@
+
+<% include ../partials/header %>
+<% include ../partials/content.ejs %>
+
+<div class="container">
+    <div class="row">
+        <div class="offset-md-3 col-md-6">
+            
+            <BR>
+
+            <h1><%= title %></h1>
+
+            <BR>
+
+            <form class="form" method="POST">
+                <div class="form-group">
+                    <input type="hidden"
+                        name="id"
+                        value="<%= item._id %>"
+                    >
+                    <label for="lastNameTextField">Last Name</label>
+                    <input type="text" class="form-control"
+                        id="lastNameTextField"
+                        placeholder="Last Name"
+                        name="lastName" 
+                        value="<%= item.lastName %>"
+                        required>
+                </div>
+
+                <BR>
+
+                <div class="form-group">
+                    <label for="firstNameTextField">First Name</label>
+                    <input type="text" class="form-control"
+                    id="firstNameTextField"
+                    placeholder="First Name"
+                    name="firstName"
+                    value="<%= item.firstName %>"
+                    required>
+                </div>
+
+                <BR>
+
+                <div class="form-group">
+                    <label for="areaCodeTextField">Area Code</label>
+                    <input type="text" class="form-control"
+                    id="areaCodeTextField"
+                    placeholder="Area Code"
+                    name="areaCode" 
+                    value="<%= item.areaCode %>"
+                    >
+                </div>
+
+                <BR>
+
+                <div class="form-group">
+                    <label for="phoneNumberTextField">Phone Number</label>
+                    <input type="text" class="form-control"
+                    id="phoneNumberTextField"
+                    placeholder="Phone Number"
+                    name="phoneNumber" 
+                    value="<%= item.phoneNumber %>"
+                    >
+                </div>
+
+                <BR>
+
+                <div class="form-group">
+                    <label for="emailTextField">Email</label>
+                    <input type="text" class="form-control"
+                    id="EmailTextField"
+                    placeholder="Email"
+                    name="email" 
+                    value="<%= item.email %>"
+                    >
+                </div>
+
+                <BR>
+
+                <button class="btn btn-primary" type="submit">
+                    <i class="fas fa-edit"></i> 
+                    <%= label %>
+                </button>
+                
+                <a href="/bizcontactlist" class="btn btn-warning">
+                    <i class="fas fa-undo"></i> 
+                    Cancel
+                </a>
+
+            </form>
+        </div>
+    </div>
+</div>
+
+<% include ../partials/footer.ejs %>

@@ -1,24 +1,43 @@
+<% include ../partials/header %>
+<% include ../partials/content %>
+
 <table class="table table-bordered table-striped table-hover">
     <!-- Header Row-->
     <tr>
-        <th class="text-center">First Name</th>
-        <th class="text-center">Last Name</th>
-        <th class="text-center">Area Code</th>
-        <th class="text-center">Phone Number</th>
-        <th class="text-center">Email</th>
-        <th class="text-center" colspan="2">Actions</th>
+        <th class="text-left">Last Name</th>
+        <th class="text-left">First Name</th>
+        <th class="text-left">Area Code</th>
+        <th class="text-left">Phone Number</th>
+        <th class="text-left">Email</th>
+        <th class="text-left" colspan="2">Actions</th>
     </tr>
 
     <!-- Repeatable Template Row -->
 
     <% for(let count = 0; count < ContactList.length; count++) { %>
         <tr>
-            <td class="text-center"><%= ContactList[count].firstName %></td>
-            <td class="text-center"><%= ContactList[count].lastName %></td>
-            <td class="text-center"><%= ContactList[count].areaCode %></td>
-            <td class="text-center"><%= ContactList[count].phoneNumber %></td>
-            <td class="text-center"><%= ContactList[count].email %></td>
+            <td class="text-left"><%= ContactList[count].lastName %></td>
+            <td class="text-left"><%= ContactList[count].firstName %></td>
+            <td class="text-left"><%= ContactList[count].areaCode %></td>
+            <td class="text-left"><%= ContactList[count].phoneNumber %></td>
+            <td class="text-left"><%= ContactList[count].email %></td>
 
+            <td class="text-left">
+                <a href="/bizcontactlist/edit/<%= ContactList[count]._id %>" class="btn btn-primary btn-sm">
+                <i class="fas fa-pencil-alt">Update</i></a>
+
+                <a href="/bizcontactlist/delete/<%= ContactList[count]._id %>" class="btn btn-primary btn-sm">
+                    <i class="fas fa-pencil-alt">Delete</i></a>
+            </td>
         </tr>
     <% } %>
 </table>
+
+<div>
+    <a href="/bizcontactlist/add" class="btn btn-primary btn-sm" role="button">
+        <i class="fas fa-pencil-alt"></i> 
+        Add New
+    </a>         
+</div>
+
+<% include ../partials/footer %>

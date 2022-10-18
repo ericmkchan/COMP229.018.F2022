@@ -31,6 +31,9 @@ app.use(express.static(path.join(__dirname, 'public')));
 // Path for bootstrap module for CSS
 app.use(express.static(path.join(__dirname, 'node_modules/bootstrap/dist')));
 
+// testing
+//app.use(express.static(path.join(__dirname, 'views')));
+
 app.use('/', indexRouter);
 app.use('/users', usersRouter);
 //
