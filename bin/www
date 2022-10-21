@@ -11,6 +11,9 @@ const http = require('http');
 // Database Connection
 const dbconfig = require('../config/db');
 
+// Authentication
+const configurePassport = require('../config/passport');
+
 /**
  * Get port from environment and store in Express.
  */
@@ -20,6 +23,9 @@ app.set('port', port);
 
 // Database Connection
 const db = dbconfig();
+
+// Authentication
+const passport = configurePassport();
 
 /**
  * Create HTTP server.

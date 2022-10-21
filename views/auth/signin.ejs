@@ -1,0 +1,34 @@
+<% include ../partials/header %>
+<% include ../partials/content %>
+
+<h1><%= title %></h1>
+
+<div class="container">
+    <div class="row">
+        <div class="offset-md-3 col-md-3">
+
+            <% for(var i in messages) { %>
+                <div class="flash"><%= messages[i] %></div>
+            <% } %>
+
+            <BR>
+
+            <form action="/users/signin" method="post">
+                <div class="form-group">
+                    <label>Username:</label>
+                    <input type="text" name="username" class="form-control" />
+                </div>
+                <BR>
+                <div class="form-group">
+                    <label>Password:</label>
+                    <input type="password" name="password" class="form-control"/>
+                </div>
+                <BR>
+                <div class="form-group">
+                    <input class="btn btn-primary" type="submit" value="Sign In" />                    
+                </div>
+                <br>
+            </form>
+        </div>
+    </div>
+</div>

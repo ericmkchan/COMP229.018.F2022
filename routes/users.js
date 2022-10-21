@@ -1,9 +1,23 @@
 const express = require('express');
 const router = express.Router();
 
+const usersController = require('../controllers/login')
+const passport = require('passport');
+
 /* GET users listing. */
 router.get('/', function(req, res, next) {
-  res.send('respond with a resource');
+  res.render('users', {
+    title: 'Users',
+    userName: req.user ? req.user.username : ''
+  });
 });
+
+router.get('/signup', usersController.renderSignup);
+router.post('/signup', usersController.signup);
+
+router.get('/signin', usersController.renderSignin);
+router.post('/signin', usersController.signin);
+
+router.get('/signout', usersController.signout);
 
 module.exports = router;
