@@ -3,7 +3,7 @@ const router = express.Router();
 
 /* GET home page. */
 router.get('/', function(req, res, next) {
-  res.render('index', { title: 'Express', name: 'Eric Chan' });
+  res.render('index', { title: 'Express', name: 'Eric Chan', userName: ''});
 });
 
 router.get('/aboutme', function(req, res, next) {

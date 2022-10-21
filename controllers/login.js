@@ -24,13 +24,13 @@ function getErrorMessage(err) {
 module.exports.renderSignin = function(req, res, next) {
     if (!req.user) {
         res.render('auth/signin', {
-            title: 'Sign-in Form',
+            title: 'Login Form',
             name: 'Eric Chan',
             messages: req.flash('error') || req.flash('info')
         });
     } else {
-        console.log(req.user);
-        return res.redirect('/');
+        // console.log(req.user);
+        return res.redirect('/bizcontactlist');
     }
 }
 
@@ -44,7 +44,7 @@ module.exports.renderSignup = function(req, res, next) {
             user: newUser
         });
     } else {
-        return res.redirect('/');
+        return res.redirect('/bizcontactlist');
     }
 }
 
@@ -75,7 +75,7 @@ module.exports.signup = function(req, res, next) {
             });
         });
     } else {
-        return res.redirect('/');
+        return res.redirect('/bizcontactlist');
     }
 }
 
@@ -84,13 +84,13 @@ module.exports.signout = function(req, res, next) {
         if (err) {
             return next(err);
         }
-        res.redirect('/');
+        res.redirect('/users/signin');
     });
 }
 
 module.exports.signin = function(req, res, next) {
     passport.authenticate('local', {
-        successRedirect: req.session.url || '/',
+        successRedirect: req.session.url || '/bizcontactlist',
         failureRedirect: '/users/signin',
         failureFlash: true
     }) (req, res, next);
