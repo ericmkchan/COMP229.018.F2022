@@ -1,8 +1,7 @@
-
 // File: app.js
 // Name: Man Kit Chan
 // Student ID: 301251832
-// Date: 2022-10-16
+// Date: 2022-10-21
 // Course: COMP229-018
 // Title: Assignment 2
 
@@ -16,13 +15,12 @@ const passport = require('passport');
 const flash = require('connect-flash');
 
 const indexRouter = require('./routes/index');
-const usersRouter = require('./routes/users');
-//
-const contactRouter = require('./routes/bizcontactlist');
+const usersRouter = require('./routes/users'); // Defining routes for users login
+const contactRouter = require('./routes/bizcontactlist'); // Defining routers for business contact list
 
 const app = express();
 
-//
+// Setup session
 app.use(session({
   saveUninitialized: true,
   resave: true,
@@ -48,7 +46,6 @@ app.use(passport.session());
 
 app.use('/', indexRouter);
 app.use('/users', usersRouter);
-//
 app.use('/bizcontactlist', contactRouter);
 
 // catch 404 and forward to error handler
